@@ -1,0 +1,10 @@
+footer {
+  background-color: #323232;
+  color: #555;
+  height: 500px;
+}
+
+footer {
+  grid-column: 1 / -1;
+}
+/*# sourceMappingURL=Footer.css.map */

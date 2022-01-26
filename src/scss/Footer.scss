@@ -1,0 +1,11 @@
+@import 'vars';
+
+footer {
+    background-color: $dbrown;
+    color: #555;
+    height: 500px;
+}
+
+footer {
+    grid-column: 1 / -1;
+}
