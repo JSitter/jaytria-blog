@@ -6,4 +6,4 @@
 </IfModule>
 # php -- END cPanel-generated handler, do not edit
 
-Header add Access-Control-Allow-Origin "https://blog.jaytria.com/"
+Header add Access-Control-Allow-Origin "*"
