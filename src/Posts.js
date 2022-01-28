@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import { fetchJSON } from './helpers.js';
 
+import './css/Posts.css';
+
 const Placeholder = () => {
     return (
         <article>
-            Loading ...
+            <strong>Loading ...</strong>
         </article>
     );
 }
@@ -27,9 +29,9 @@ function Posts() {
     const [mainPost, setMainPost] = useState(false);
 
     return (
-        <article>
+        <section className="main-content">
             {mainPost ? <Post data={mainPost} /> : <Placeholder />}
-        </article>
+        </section>
     );
 }
 
