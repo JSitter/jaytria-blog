@@ -44,16 +44,6 @@ header  {
     height: 600px;
 }
 
-footer {
-    background-color: $dbrown;
-    color: #555;
-    height: 500px;
-}
-
-footer {
-    grid-column: 1 / -1;
-}
-
 @media(max-width: 554px) {
     
     header {

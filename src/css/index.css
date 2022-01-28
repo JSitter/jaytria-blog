@@ -5,10 +5,16 @@
   font-family: 'Roboto', sans-serif;
 }
 
+div#root {
+  width: 100vw;
+}
+
 body {
+  overflow-x: hidden;
   max-width: 100vw;
   display: -ms-grid;
   display: grid;
+  margin: 0px auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
