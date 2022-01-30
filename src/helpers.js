@@ -9,7 +9,7 @@ const fetchJSON = (route) => {
                 .then(json => resolve(json))
                 .catch(err => reject(err));
         } catch (err) {
-            console.log('Error fetching resource: ' + err);
+            console.log(`Error fetching resource ${route}:  ${err}`);
         }
     })
 }
