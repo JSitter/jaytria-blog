@@ -111,16 +111,16 @@ nav {
 /**
 * Media Queries
 */
-@media(max-width: 554px) {
-    body {
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: 235px 500px 240px;
-    }
-}
+// @media(max-width: 554px) {
+//     body {
+//         grid-template-columns: repeat(3, 1fr);
+//         grid-template-rows: 235px 500px 240px;
+//     }
+// }
 
-@media(min-width: 555px) {
-    body {
-        grid-template-columns: 60% 40%;
-        grid-template-rows: 235px 400px 240px;
-    }
-}
+// @media(min-width: 555px) {
+//     body {
+//         grid-template-columns: 60% 40%;
+//         grid-template-rows: 235px 400px 240px;
+//     }
+// }
