@@ -3,8 +3,8 @@
 header {
     overflow-x: hidden;
     width: 100%;
-    display: flex;
-    flex-direction: row;
+    // display: flex;
+    // flex-direction: row;
 }
 
 header  {
@@ -23,9 +23,18 @@ header  {
     }
 }
 
+.header-stripes {
+    position: absolute;
+    margin-top: -50px;
+    overflow: hidden;
+    width: 100%;
+    height: 600px;
+}
+
 .website-heading {
-    width: auto;
-    margin: 40px;
+    width: max-content;
+    margin: 40px auto;
+    text-align: left;
 }
 
 .tilt {
@@ -44,6 +53,9 @@ header  {
     height: 600px;
 }
 
+/**
+ * Smallest Sizes
+ */
 @media(max-width: 554px) {
     
     header {
@@ -91,6 +103,9 @@ header  {
     }
 }
 
+/*
+ * Small Tablet Sizes 
+ */
 @media(min-width: 555px) {
     header {
         grid-column: 1 / 2;
@@ -106,6 +121,10 @@ header  {
         top: -230px;
         height: 600px;
         width: 800px;
+    }
+
+    .website-heading {
+        margin-left: 45px;
     }
 
     .header-background-stripe {
@@ -157,6 +176,17 @@ header  {
         top: -600px;
         width: 1000px;
         height: 1000px;
+    }
+
+    .website-heading {
+        width: max-content;
+        margin-left: 90px;
+        h1{     
+            font-size: 8rem;
+            color: $yellow;
+            margin: auto;
+        }
+
     }
 
     .header-background-stripe {
