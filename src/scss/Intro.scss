@@ -1,0 +1,21 @@
+@import 'vars';
+
+.heading-intro-wrapper {
+    margin-top: 250px;
+    width: calc(100%-60px);
+    text-align: left;
+    padding: 30px;
+
+    h1, h2, h3, h4, h5, h6 {
+        color: $dbrown;
+        margin-bottom: 8px;
+    }
+}
+
+
+
+p {
+    font-size: 2em;
+    color: $teal;
+    line-height: 1.8rem;
+}
