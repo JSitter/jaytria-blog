@@ -6,13 +6,15 @@ import './css/Posts.css';
 const Placeholder = () => {
     return (
         <article>
-            <strong>Loading ...</strong>
+            <div className="loader">Loading...</div>
+            <strong className="loading-article">Loading</strong>
         </article>
     );
 }
 
 const Post = (response) => {
     console.log(response.data.id);
+
     return (
         <article>
             <h2 dangerouslySetInnerHTML={{ __html: response.data.title.rendered }}></h2>
@@ -22,6 +24,7 @@ const Post = (response) => {
 }
 
 function Posts() {
+    console.log(process.env.NODE_ENV);
     useEffect(() => {
         fetchJSON('posts').then(json => setMainPost(json[0]));
     }, []);
