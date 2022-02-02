@@ -23,7 +23,13 @@ function App() {
       <Header />
       <div className="posts-wrapper">
         <StickyMenu />
-        <Posts />
+        <Router >
+
+          <Routes>
+            <Route path='/:year/:month/:day/:title' element={<Posts />} />
+            <Route path='/' element={<Posts />} />
+          </Routes>
+        </Router>
       </div>
       <Footer />
     </div >
