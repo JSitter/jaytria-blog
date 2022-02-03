@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { fetchJSON } from './helpers.js';
+import NotFound from './NotFound.js';
 
 import './css/Posts.css';
 
-const Placeholder = () => {
+const LoadingSpinner = () => {
     return (
         <article>
             <div className="loader">Loading...</div>
@@ -12,28 +14,52 @@ const Placeholder = () => {
     );
 }
 
-const Post = (response) => {
-    console.log(response.data.id);
+const Article = (post) => {
 
     return (
         <article>
-            <h2 dangerouslySetInnerHTML={{ __html: response.data.title.rendered }}></h2>
-            <section dangerouslySetInnerHTML={{ __html: response.data.content.rendered }}></section>
+            <h2 dangerouslySetInnerHTML={{ __html: post.response.title.rendered }}></h2>
+            <section dangerouslySetInnerHTML={{ __html: post.response.content.rendered }}></section>
         </article >
     );
 }
 
-function Posts() {
-    console.log(process.env.NODE_ENV);
-    useEffect(() => {
-        fetchJSON('posts').then(json => setMainPost(json[0]));
-    }, []);
+const Post = ({ response, params }) => {
+    let post = getPost(params, response);
 
-    const [mainPost, setMainPost] = useState(false);
+    return (
+        <div>
+            {post ? <Article response={post} /> : <NotFound />}
+        </div>
+    );
+}
+
+function getPost(params, posts) {
+
+    if ("title" in params) {
+        return false;
+    } else {
+        return posts[0]
+    }
+}
+
+function Posts() {
+
+    const [loading, setLoading] = useState(true);
+    const [allPosts, setAllPosts] = useState(false);
+
+    let params = useParams();
+
+    useEffect(() => {
+        fetchJSON('posts').then(json => {
+            setAllPosts(json);
+            setLoading(false)
+        });
+    }, []);
 
     return (
         <section className="main-content">
-            {mainPost ? <Post data={mainPost} /> : <Placeholder />}
+            {!loading ? <Post response={allPosts} params={params} /> : <LoadingSpinner />}
         </section>
     );
 }
