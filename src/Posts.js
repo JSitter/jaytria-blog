@@ -35,9 +35,18 @@ const Post = ({ response, params }) => {
 }
 
 function getPost(params, posts) {
+    console.log(params);
+    const link_address = `https://blog.jaytria.com/${params.year}/${params.month}/${params.day}/${params.title}/`
 
     if ("title" in params) {
-        return false;
+        const found_post = posts.filter(post => post.link === link_address);
+        if (found_post) {
+            console.log(found_post[0])
+            return found_post[0];
+        } else {
+            return false;
+        }
+
     } else {
         return posts[0]
     }
@@ -49,11 +58,13 @@ function Posts() {
     const [allPosts, setAllPosts] = useState(false);
 
     let params = useParams();
+    console.log(params);
 
     useEffect(() => {
         fetchJSON('posts').then(json => {
             setAllPosts(json);
-            setLoading(false)
+            setLoading(false);
+            console.log(json);
         });
     }, []);
 
