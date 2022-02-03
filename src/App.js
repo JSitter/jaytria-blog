@@ -5,9 +5,10 @@ import Header from './Header.js';
 import NotFound from './NotFound.js';
 import Posts from './Posts.js';
 import StickyMenu from './StickyMenu.js';
+import Vaccine from './Vaccine.js';
 
 import './css/App.css';
-import Vaccine from './Vaccine.js';
+
 
 function App() {
 
