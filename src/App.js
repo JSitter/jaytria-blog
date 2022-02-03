@@ -7,6 +7,7 @@ import Posts from './Posts.js';
 import StickyMenu from './StickyMenu.js';
 
 import './css/App.css';
+import Vaccine from './Vaccine.js';
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
       <Header />
       <div className="posts-wrapper">
         <StickyMenu />
+        <Vaccine />
         <Router >
           <Routes>
             <Route path='/:year/:month/:day/:title' element={<Posts />} />
