@@ -1,6 +1,6 @@
 RewriteEngine on
-RewriteCond %{REQUEST_FILENAME} .*request.*
-RewriteRule . /request.php [L]
+RewriteCond %{REQUEST_FILENAME} .*request\.php
+RewriteRule / request.php [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-l
