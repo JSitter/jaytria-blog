@@ -1,4 +1,5 @@
 RewriteEngine on
+RewriteRule ^*request.php*$ /request.php [L]
 #RewriteBase /
 #RewriteRule ^index\.html$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
