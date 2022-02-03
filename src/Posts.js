@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { fetchJSON } from './helpers.js';
 
 import NotFound from './NotFound.js';
+import About from './About.js';
 
 import './css/Posts.css';
 
@@ -41,7 +42,6 @@ function getPost(params, posts) {
     if ("title" in params) {
         const found_post = posts.filter(post => post.link === link_address);
         if (found_post) {
-            console.log(found_post[0])
             return found_post[0];
         } else {
             return false;
@@ -70,6 +70,7 @@ function Posts() {
     return (
         <section className="main-content">
             {!loading ? <Post response={allPosts} params={params} /> : <LoadingSpinner />}
+            <About />
         </section>
     );
 }
