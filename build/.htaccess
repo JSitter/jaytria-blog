@@ -1,5 +1,5 @@
 RewriteEngine on
-RewriteCond %{REQUEST_FILENAME} ^request\.php*
+RewriteCond %{REQUEST_FILENAME} ^request\.php$
 RewriteRule . /request.php [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
