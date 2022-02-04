@@ -1,6 +1,4 @@
-import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { fetchJSON } from './helpers.js';
 
 import NotFound from './NotFound.js';
 import About from './About.js';
@@ -52,20 +50,8 @@ function getPost(params, posts) {
     }
 }
 
-function Posts() {
-
-    const [loading, setLoading] = useState(true);
-    const [allPosts, setAllPosts] = useState(false);
-
+function Posts({ allPosts, loading }) {
     let params = useParams();
-
-    useEffect(() => {
-        fetchJSON('posts').then(json => {
-            setAllPosts(json);
-            setLoading(false);
-            console.log(json);
-        });
-    }, []);
 
     return (
         <section className="main-content">
