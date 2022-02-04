@@ -1,9 +1,10 @@
 import { useParams } from 'react-router-dom';
+import { API_ADDRESS } from './helpers.js';
 
 import NotFound from './NotFound.js';
-import About from './About.js';
 
 import './css/Posts.css';
+
 
 const LoadingSpinner = () => {
     return (
@@ -15,16 +16,21 @@ const LoadingSpinner = () => {
 }
 
 const Article = (post) => {
+    const shareLink = `/${post.response.link.split('/').slice(-5, -1).join('/')}`;
 
     return (
         <article>
             <h2 dangerouslySetInnerHTML={{ __html: post.response.title.rendered }}></h2>
             <section dangerouslySetInnerHTML={{ __html: post.response.content.rendered }}></section>
+            <section className="share-article">
+                <a href={shareLink}>Share Article</a>
+            </section>
         </article >
     );
 }
 
 const Post = ({ response, params }) => {
+
     let post = getPost(params, response);
 
     return (
@@ -35,7 +41,7 @@ const Post = ({ response, params }) => {
 }
 
 function getPost(params, posts) {
-    const link_address = `https://blog.jaytria.com/${params.year}/${params.month}/${params.day}/${params.title}/`
+    const link_address = `${API_ADDRESS}/${params.year}/${params.month}/${params.day}/${params.title}/`
 
     if ("title" in params) {
         const found_post = posts.filter(post => post.link === link_address);
@@ -56,7 +62,6 @@ function Posts({ allPosts, loading }) {
     return (
         <section className="main-content">
             {!loading ? <Post response={allPosts} params={params} /> : <LoadingSpinner />}
-            <About />
         </section>
     );
 }
