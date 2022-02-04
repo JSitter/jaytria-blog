@@ -1,4 +1,4 @@
-function NextArticle({ previous, next }) {
+function ArticleNav({ previous, next }) {
     return (
         <div>
             <a href="#">Previous Article: Previous Article</a> | <a href="#">Next article: Article Title</a>
@@ -6,4 +6,4 @@ function NextArticle({ previous, next }) {
     );
 }
 
-export default NextArticle;
+export default ArticleNav;
