@@ -1,3 +1,5 @@
+const API_ADDRESS = "https://blog.jaytria.com";
+
 const fetchJSON = (route) => {
     return new Promise((resolve, reject) => {
         try {
@@ -18,4 +20,4 @@ const fetchJSON = (route) => {
     })
 }
 
-export { fetchJSON };
+export { fetchJSON, API_ADDRESS };
