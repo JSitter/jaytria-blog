@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { fetchJSON } from './helpers.js';
 
+import About from './About.js';
+import ArticleNav from './ArticleNav.js';
 import Footer from './Footer.js';
 import Header from './Header.js';
 import NotFound from './NotFound.js';
@@ -20,7 +22,6 @@ function App() {
     fetchJSON('posts').then(json => {
       setAllPosts(json);
       setLoading(false);
-      console.log(json);
     });
   }, []);
 
@@ -36,6 +37,8 @@ function App() {
             <Route path='*' element={<NotFound />} />
           </Routes>
         </Router>
+        <About />
+        <ArticleNav posts={allPosts} />
       </div>
       <Footer />
     </div >
