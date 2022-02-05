@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 
+import './css/ArticleNav.css';
+
 function createNavLink(link) {
     return `/${link.split('/').slice(-5, -1).join('/')}`;
 }
@@ -31,7 +33,7 @@ function ArticleNav({ posts, curPostIndex, setCurPostIndex }) {
 
 
         return (
-            <div>
+            <div className="article-nav">
                 <a href={"#top-content"} onClick={() => setCurPostIndex(curPostIndex + 1)}>Next Post: {getNextPostTitle(curPostIndex, posts)}</a>
             </div>
         );
