@@ -268,6 +268,10 @@ section.share-article {
 }
 
 section.share-article .share-icon {
+  background-color: #323232;
+  padding: 5px;
+  border-radius: 5px;
+  color: #FFC700;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -283,9 +287,8 @@ section.share-article .share-icon {
 }
 
 section.share-article .share-icon:focus {
-  outline: none;
+  outline: 3px solid #10AAB4;
   color: #10AAB4 !important;
-  border: 2px solid #10AAB4;
   border-radius: 5px;
 }
 
@@ -294,6 +297,7 @@ section.share-article .share-url {
 }
 
 section.share-article .share-url .close:focus {
+  outline: none;
   color: #c83a16 !important;
 }
 

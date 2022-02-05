@@ -138,16 +138,19 @@ section.share-article {
     flex-direction: column;
 
     .share-icon {
+        background-color: $dbrown;
+        padding: 5px;
+        border-radius: 5px;
+        color: $yellow;
         display: flex;
         flex-direction: column; 
         user-select: none;
-        cursor: pointer;
-        
+        cursor: pointer; 
     }
+
     .share-icon:focus {
-        outline:none;     
+        outline:3px solid $teal;     
         color: $teal!important;
-        border: 2px solid $teal;
         border-radius: 5px;
     }
 
@@ -155,7 +158,7 @@ section.share-article {
     .share-url {
         width: 100%;
         .close:focus {
-            // outline: none;
+            outline: none;
             color: rgb(200, 58, 22)!important;
         }
         
