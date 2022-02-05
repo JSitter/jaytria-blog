@@ -1,5 +1,9 @@
 const API_ADDRESS = "https://blog.jaytria.com";
 
+const copyToClipboard = (text) => {
+    navigator.clipboard.writeText(text);
+}
+
 const fetchJSON = (route) => {
     return new Promise((resolve, reject) => {
         try {
@@ -20,4 +24,4 @@ const fetchJSON = (route) => {
     })
 }
 
-export { fetchJSON, API_ADDRESS };
+export { API_ADDRESS, copyToClipboard, fetchJSON };
