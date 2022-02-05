@@ -52,7 +52,6 @@ function getPost(params, posts, curPostIndex) {
         }
 
     } else {
-        console.log(curPostIndex)
         return posts[curPostIndex];
     }
 }
