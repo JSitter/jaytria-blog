@@ -69,7 +69,7 @@ function ArticleNav({ posts, curPostIndex, setCurPostIndex }) {
 
         return (
             <div>
-                <a href={nextArticleLink + "#top-content"} onClick={() => setCurPostIndex(curPostIndex + 1)}>Next Post: {getNextPostTitle(curPostIndex, posts)}</a>
+                <a href={"#top-content"} onClick={() => setCurPostIndex(curPostIndex + 1)}>Next Post: {getNextPostTitle(curPostIndex, posts)}</a>
             </div>
         );
     }
