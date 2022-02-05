@@ -1,5 +1,8 @@
+import { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { API_ADDRESS } from './helpers.js';
+import { API_ADDRESS, copyToClipboard } from './helpers.js';
+import { faPaperPlane, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import NotFound from './NotFound.js';
 
@@ -16,14 +19,56 @@ const LoadingSpinner = () => {
 }
 
 const Article = (post) => {
+    const [showSharingUrl, setShowSharingUrl] = useState(false);
+    const [clipboardCopied, setClipboardCopied] = useState(false);
     const shareLink = `${window.location.host}/${post.response.link.split('/').slice(-5, -1).join('/')}`;
+
+    const copied = (text) => {
+        copyToClipboard(text)
+        setClipboardCopied(true);
+        setTimeout(() => setClipboardCopied(false), 2500);
+    }
+
+    const sendLinkFocus = (e) => {
+        if (e.key == "Enter") {
+            setShowSharingUrl(!showSharingUrl);
+        }
+    }
+
+    const closeSendLinkFocus = (e) => {
+        if (e.key == "Enter") {
+            setShowSharingUrl(false);
+        }
+    }
 
     return (
         <article>
             <h2 dangerouslySetInnerHTML={{ __html: post.response.title.rendered }}></h2>
             <section dangerouslySetInnerHTML={{ __html: post.response.content.rendered }}></section>
+
             <section className="share-article">
-                <a href={shareLink}>Share Article</a>
+                <div
+                    onClick={() => setShowSharingUrl(!showSharingUrl)}
+                    className="share-icon"
+                    tabIndex="0"
+                    onKeyDown={sendLinkFocus}
+                >
+                    <FontAwesomeIcon
+                        className="share-icon fa-3x"
+                        icon={faPaperPlane}
+                    />
+                    Share
+                </div>
+                <div className={`share-url ${!showSharingUrl ? 'hide' : 'visible'}`}>
+                    <input onFocus={() => copied(shareLink)} value={shareLink} readOnly />
+                    <span className="close" tabIndex="0" onKeyDown={closeSendLinkFocus} onClick={() => setShowSharingUrl(false)}>
+                        <FontAwesomeIcon
+                            className="close fa-2x"
+                            icon={faTimesCircle}
+                        />
+                    </span>
+                    <div className={`copied-location ${clipboardCopied ? "visible" : "hide"}`}>Copied URL</div>
+                </div>
             </section>
         </article >
     );
