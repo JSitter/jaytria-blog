@@ -16,7 +16,7 @@ const LoadingSpinner = () => {
 }
 
 const Article = (post) => {
-    const shareLink = `/${post.response.link.split('/').slice(-5, -1).join('/')}`;
+    const shareLink = `${window.location.host}/${post.response.link.split('/').slice(-5, -1).join('/')}`;
 
     return (
         <article>
@@ -29,9 +29,9 @@ const Article = (post) => {
     );
 }
 
-const Post = ({ response, params }) => {
+const Post = ({ response, params, curPostIndex }) => {
 
-    let post = getPost(params, response);
+    let post = getPost(params, response, curPostIndex);
 
     return (
         <div>
@@ -40,7 +40,7 @@ const Post = ({ response, params }) => {
     );
 }
 
-function getPost(params, posts) {
+function getPost(params, posts, curPostIndex) {
     const link_address = `${API_ADDRESS}/${params.year}/${params.month}/${params.day}/${params.title}/`
 
     if ("title" in params) {
@@ -52,16 +52,17 @@ function getPost(params, posts) {
         }
 
     } else {
-        return posts[0]
+        console.log(curPostIndex)
+        return posts[curPostIndex];
     }
 }
 
-function Posts({ allPosts, loading }) {
+function Posts({ allPosts, loading, curPostIndex }) {
     let params = useParams();
 
     return (
-        <section className="main-content">
-            {!loading ? <Post response={allPosts} params={params} /> : <LoadingSpinner />}
+        <section id="top-content" className="main-content">
+            {!loading ? <Post response={allPosts} params={params} curPostIndex={curPostIndex} /> : <LoadingSpinner />}
         </section>
     );
 }

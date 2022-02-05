@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { fetchJSON } from './helpers.js';
 
@@ -17,6 +17,7 @@ function App() {
 
   const [loading, setLoading] = useState(true);
   const [allPosts, setAllPosts] = useState(false);
+  const [curPostIndex, setCurPostIndex] = useState(0);
 
   useEffect(() => {
     fetchJSON('posts').then(json => {
@@ -33,12 +34,12 @@ function App() {
         <Router >
           <Routes>
             <Route path='/:year/:month/:day/:title' element={<Posts allPosts={allPosts} loading={loading} />} />
-            <Route path='/' element={<Posts allPosts={allPosts} loading={loading} />} />
+            <Route path='/' element={<Posts allPosts={allPosts} loading={loading} curPostIndex={curPostIndex} />} />
             <Route path='*' element={<NotFound />} />
           </Routes>
         </Router>
         <About />
-        <ArticleNav posts={allPosts} />
+        <ArticleNav posts={allPosts} curPostIndex={curPostIndex} setCurPostIndex={setCurPostIndex} />
       </div>
       <Footer />
     </div >
