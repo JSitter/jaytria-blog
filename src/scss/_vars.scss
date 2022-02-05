@@ -7,6 +7,7 @@ $yellow: #FFC700;
 $codesnip-bg: rgb(59, 59, 59);
 $codesnip-txt: #FFC700;;
 $dark-grey: #333;
+$red: rgb(200, 58, 22);
 
 $border-radius: .2rem;
 $text-width: 70ch;
@@ -17,7 +18,20 @@ $thin-font: 'Roboto';
 $code-font: 'monospace';
 
 .hidden {
-    display: none;
+  display: none;
+}
+
+.hide {
+  visibility:hidden;
+  opacity:0;
+  transition:visibility 0s linear 0.2s,opacity 0.2s linear;
+}
+
+.visible {
+  visibility:visible;
+  opacity:1;
+  transition:visibility 0s linear 0.2s,opacity 0.2s linear;
+  transition-delay:0s;
 }
 
 .loader {

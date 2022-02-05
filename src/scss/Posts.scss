@@ -1,3 +1,4 @@
+
 @import 'vars';
 
 .main-content {
@@ -129,4 +130,46 @@ article {
         margin-bottom: 30px;
         color: #5e5e5e;
     }
+}
+
+section.share-article {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .share-icon {
+        display: flex;
+        flex-direction: column; 
+        user-select: none;
+        cursor: pointer;
+        
+    }
+    .share-icon:focus {
+        outline:none;     
+        color: $teal!important;
+        border: 2px solid $teal;
+        border-radius: 5px;
+    }
+
+    
+    .share-url {
+        width: 100%;
+        .close:focus {
+            // outline: none;
+            color: rgb(200, 58, 22)!important;
+        }
+        
+    }
+
+    input {
+        padding: .3rem;
+        font-size: 1.9rem;
+        color: $teal;
+        background-color: #efefef;
+        border: 2px solid $teal;
+        border-radius: 5px;
+        width: 100%;
+        max-width: 60ch;
+    }
+
 }
