@@ -2,6 +2,22 @@
   display: none;
 }
 
+.hide {
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: visibility 0s linear 0.2s,opacity 0.2s linear;
+  transition: visibility 0s linear 0.2s,opacity 0.2s linear;
+}
+
+.visible {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: visibility 0s linear 0.2s,opacity 0.2s linear;
+  transition: visibility 0s linear 0.2s,opacity 0.2s linear;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+}
+
 .loader {
   color: #bfbfbf;
   font-size: 50px;
@@ -238,5 +254,57 @@ article figcaption {
   margin-right: auto;
   margin-bottom: 30px;
   color: #5e5e5e;
+}
+
+section.share-article {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+section.share-article .share-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
+
+section.share-article .share-icon:focus {
+  outline: none;
+  color: #10AAB4 !important;
+  border: 2px solid #10AAB4;
+  border-radius: 5px;
+}
+
+section.share-article .share-url {
+  width: 100%;
+}
+
+section.share-article .share-url .close:focus {
+  color: #c83a16 !important;
+}
+
+section.share-article input {
+  padding: .3rem;
+  font-size: 1.9rem;
+  color: #10AAB4;
+  background-color: #efefef;
+  border: 2px solid #10AAB4;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 60ch;
 }
 /*# sourceMappingURL=Posts.css.map */

@@ -2,6 +2,22 @@
   display: none;
 }
 
+.hide {
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: visibility 0s linear 0.2s,opacity 0.2s linear;
+  transition: visibility 0s linear 0.2s,opacity 0.2s linear;
+}
+
+.visible {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: visibility 0s linear 0.2s,opacity 0.2s linear;
+  transition: visibility 0s linear 0.2s,opacity 0.2s linear;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+}
+
 .loader {
   color: #bfbfbf;
   font-size: 50px;
