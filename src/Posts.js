@@ -57,17 +57,22 @@ const Article = (post) => {
                         className="share-icon fa-3x"
                         icon={faPaperPlane}
                     />
-                    Share
+                    <small>Share</small>
                 </div>
                 <div className={`share-url ${!showSharingUrl ? 'hide' : 'visible'}`}>
+                    <div className="share-title-bar"><h4 dangerouslySetInnerHTML={{ __html: post.response.title.rendered }}></h4></div>
                     <input onFocus={() => copied(shareLink)} value={shareLink} readOnly />
+                    <div className="link-buttons">
+                        <span className="link-button" onClick={() => copied(shareLink)}>Copy Link</span>
+                        <span className="link-button" onClick={() => setShowSharingUrl(false)} >Close</span>
+                    </div>
                     <span className="close" tabIndex="0" onKeyDown={closeSendLinkFocus} onClick={() => setShowSharingUrl(false)}>
                         <FontAwesomeIcon
                             className="close fa-2x"
                             icon={faTimesCircle}
                         />
                     </span>
-                    <div className={`copied-location ${clipboardCopied ? "visible" : "hide"}`}>Copied URL</div>
+                    <div className={`copied-location ${clipboardCopied ? "visible" : "hide"}`}>Copied to Clipboard</div>
                 </div>
             </section>
         </article >
