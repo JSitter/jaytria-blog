@@ -132,6 +132,16 @@ body {
   margin: 0px auto;
 }
 
+::-moz-selection {
+  background-color: #10AAB4;
+  color: #efefef;
+}
+
+::selection {
+  background-color: #10AAB4;
+  color: #efefef;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Archivo Black', sans-serif;
 }
