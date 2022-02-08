@@ -1,7 +1,9 @@
 import './css/Header.css';
-import Intro from './Intro.js';
 
-function Header() {
+import Intro from './Intro.js';
+import HeaderMenu from './HeaderMenu.js';
+
+function Header({ MenuLinks }) {
     return (
         <header>
             <div className="header-stripes">
@@ -14,6 +16,7 @@ function Header() {
                 <h1>Jaytria</h1>
                 <h2>Web Development Blog</h2>
             </div>
+            <HeaderMenu links={MenuLinks} />
             <Intro />
         </header>
     );

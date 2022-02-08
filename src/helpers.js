@@ -4,6 +4,11 @@ const copyToClipboard = (text) => {
     navigator.clipboard.writeText(text);
 }
 
+const MenuLinks = [
+    { title: "About", url: "https://jaytria.com/" },
+    { title: "Client Login", url: "https://clients.jaytria.com/" },
+];
+
 const fetchJSON = (route) => {
     return new Promise((resolve, reject) => {
         try {
@@ -24,4 +29,4 @@ const fetchJSON = (route) => {
     })
 }
 
-export { API_ADDRESS, copyToClipboard, fetchJSON };
+export { API_ADDRESS, copyToClipboard, fetchJSON, MenuLinks };
