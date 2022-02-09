@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { fetchJSON, MenuLinks } from './helpers.js';
+import { fetchJSON, MenuLinks, getPostIndex } from './helpers.js';
 
 import About from './About.js';
 import ArticleNav from './ArticleNav.js';
@@ -22,6 +22,8 @@ function App() {
   useEffect(() => {
     fetchJSON('posts').then(json => {
       setAllPosts(json);
+      const postIndex = getPostIndex(json, window.location.pathname);
+      setCurPostIndex(postIndex);
       setLoading(false);
     });
   }, []);

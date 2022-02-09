@@ -21,7 +21,8 @@ const LoadingSpinner = () => {
 const Article = (post) => {
     const [showSharingUrl, setShowSharingUrl] = useState(false);
     const [clipboardCopied, setClipboardCopied] = useState(false);
-    const shareLink = `${window.location.host}/${post.response.link.split('/').slice(-5, -1).join('/')}`;
+    // const shareLink = `${window.location.host}/${post.response.link.split('/').slice(-5, -1).join('/')}`;
+    const shareLink = window.location.href;
 
     const copied = (text) => {
         copyToClipboard(text)

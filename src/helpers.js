@@ -29,4 +29,23 @@ const fetchJSON = (route) => {
     })
 }
 
-export { API_ADDRESS, copyToClipboard, fetchJSON, MenuLinks };
+const getPostIndex = (posts, url) => {
+    const curSlug = url.split('/').at(-1);
+
+    let postIndex = false;
+
+    const curPost = posts.filter((post, index) => {
+
+        if (post.slug === curSlug) {
+            postIndex = index;
+        }
+    });
+
+    if (curPost.length > 0) {
+        return postIndex;
+    } else {
+        return 0
+    }
+}
+
+export { API_ADDRESS, copyToClipboard, fetchJSON, getPostIndex, MenuLinks };
