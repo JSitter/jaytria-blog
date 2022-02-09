@@ -129,6 +129,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  z-index: 10000;
   top: 0px;
   width: 100%;
   height: 60px;
@@ -158,8 +159,74 @@
   color: inherit;
 }
 
+.sticky-menu .hamburger-menu-wrapper {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  padding-top: 15px;
+}
+
 .sticky-menu .hamburger-menu {
   color: inherit;
   margin: 0px 10px;
+  z-index: 20000;
+}
+
+.sticky-menu .hamburger-nav-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 11000;
+}
+
+.sticky-menu .hamburger-menu-link-items {
+  top: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  background-color: #323232;
+  list-style: none;
+}
+
+.sticky-menu .hamburger-menu-link-items li {
+  width: 100%;
+  text-align: left;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.sticky-menu .hamburger-menu-link-items li a {
+  height: calc(100%+60px);
+  width: 100%;
+  display: block;
+  text-decoration: none;
+  padding: 10px 30px;
+}
+
+.sticky-menu .hamburger-menu-link-items li:hover {
+  background-color: #10AAB4;
+}
+
+.sticky-menu ul a {
+  color: #FFC700;
+}
+
+.sticky-menu nav.expanded {
+  display: block;
+}
+
+.sticky-menu nav.collapsed {
+  display: none;
 }
 /*# sourceMappingURL=StickyMenu.css.map */

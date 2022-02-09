@@ -166,35 +166,6 @@ p {
   color: #333;
 }
 
-nav {
-  padding: 0px 0px 0px 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: left;
-      -ms-flex-align: left;
-          align-items: left;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-nav li {
-  margin: 0px 0px 17px 0px;
-}
-
-nav a:link {
-  color: #10AAB4;
-}
-
-nav a:visited {
-  color: #94d0d4;
-}
-
 .main-menu {
   display: -webkit-box;
   display: -ms-flexbox;

@@ -200,11 +200,6 @@ header h1, header h2 {
     margin-left: -20%;
     margin-top: 50px;
   }
-  nav {
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 1;
-    grid-column: 1 / span 1;
-  }
   .section-title-stripe {
     width: 140vw;
     margin-top: -50px;
@@ -329,10 +324,6 @@ header h1, header h2 {
   }
   header h1 {
     font-size: 89pt;
-  }
-  nav {
-    margin-top: -210px;
-    margin-left: 50px;
   }
 }
 /*# sourceMappingURL=Header.css.map */

@@ -46,25 +46,25 @@ p {
     color: #333;
 }
 
-nav {
-    padding: 0px 0px 0px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    justify-content: center;
+// nav {
+//     padding: 0px 0px 0px 20px;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: left;
+//     justify-content: center;
 
     
-    li {
-        margin: 0px 0px 17px 0px;
-    }
+//     li {
+//         margin: 0px 0px 17px 0px;
+//     }
 
-    a:link {
-        color: $teal;
-    }
-    a:visited {
-        color: $lteal;
-    }
-}
+//     a:link {
+//         color: $teal;
+//     }
+//     a:visited {
+//         color: $lteal;
+//     }
+// }
 
 .main-menu {
     display: flex;

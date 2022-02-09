@@ -1,6 +1,6 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { fetchJSON } from './helpers.js';
+import { fetchJSON, MenuLinks } from './helpers.js';
 
 import About from './About.js';
 import ArticleNav from './ArticleNav.js';
@@ -28,9 +28,9 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
+      <Header MenuLinks={MenuLinks} />
       <div className="posts-wrapper">
-        <StickyMenu />
+        <StickyMenu links={MenuLinks} />
         <Router >
           <Routes>
             <Route path='/:year/:month/:day/:title' element={<Posts allPosts={allPosts} loading={loading} />} />

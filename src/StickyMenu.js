@@ -1,10 +1,25 @@
 import { useState, useEffect } from 'react';
-import './css/StickyMenu.css';
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-function StickyMenu() {
+
+import './css/StickyMenu.css';
+import { MenuLinks } from './helpers';
+
+function MenuList({ links, articles, expanded }) {
+    return (
+        <nav className={expanded ? "hamburger-nav-menu expanded" : "hamburger-nav-menu collapsed"}>
+            <ul className="hamburger-menu-link-items">
+                {links.map((link, index) => <li key={index}><a href={link.url}>{link.title}</a></li>)}
+            </ul>
+        </nav>
+    );
+}
+
+function StickyMenu({ links }) {
 
     const [isVisible, setIsVisible] = useState(false);
-    // const [scrollHeight, setScrollHeight] = useState(0);
+    const [expanded, setExpanded] = useState(false);
 
     useEffect(() => {
         window.addEventListener("scroll", listenToScroll);
@@ -16,8 +31,6 @@ function StickyMenu() {
         const winScroll = document.body.scrollTop ||
             document.documentElement.scrollTop;
 
-        // setScrollHeight(winScroll);
-
         if (winScroll > scrollLength) {
             setIsVisible(true);
         } else {
@@ -28,8 +41,14 @@ function StickyMenu() {
     return (
         <div className={isVisible ? "sticky-menu" : "hidden sticky-menu"} >
             <div className="menu-logo"><h2>Jaytria</h2> <h3>Web Development Blog</h3></div>
-            <h2>Title</h2>
-            <div className="hamburger-menu">|||</div>
+
+            <div className="hamburger-menu-wrapper" onClick={() => setExpanded(!expanded)}>
+                <FontAwesomeIcon
+                    className="hamburger-menu"
+                    icon={expanded ? faTimes : faBars}
+                />
+            </div>
+            <MenuList links={links} expanded={expanded} />
         </div>
     );
 }
