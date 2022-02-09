@@ -21,7 +21,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "https://blog.jaytria.com/",
+  "proxy": "https://api.jaytria.com/",
   "eslintConfig": {
     "extends": [
       "react-app",
