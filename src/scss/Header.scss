@@ -3,6 +3,39 @@
 header {
     overflow-x: hidden;
     width: 100%;
+
+    nav {
+       color: $teal;
+       text-align: left;
+       font-size: 1.3rem;
+       width: 250px;
+       
+       ul {
+        list-style: none;
+       }
+    }
+
+    nav a:link {
+        color: $teal;
+    }
+
+    nav a:visited {
+        color: $dteal;
+    }
+
+    nav a:hover {
+        color: #efefef;
+    }
+
+    nav a:focus {
+        color: #efefef;
+    }
+
+    nav a:active {
+        color: $yellow;
+        background-color: rgba(0, 0, 0, 0);
+    }
+
 }
 
 header  {
@@ -63,6 +96,10 @@ header  {
         justify-content: center;
         align-items: center;
         align-content: center;
+
+        nav {
+            margin: 20px auto;
+        }
     }
 
     .header-background {
@@ -106,6 +143,12 @@ header  {
         grid-column: 1 / 2;
         justify-content: center;
         justify-content: flex-start;
+
+        nav {
+            margin-top: 20px;
+            margin-left: 45px;
+        }
+
         
     }
 
@@ -156,6 +199,7 @@ header  {
 
 
 @media(min-width: 555px) and (max-width: 899px) {
+
     .header-background {
         left: -480px;
     }
@@ -166,6 +210,10 @@ header  {
 }
 
 @media(min-width: 900px) {
+    header > nav {
+        margin-left: 90px;
+    }
+    
     .header-background {
         left: -300px;
         top: -600px;

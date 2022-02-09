@@ -119,6 +119,38 @@ header {
   width: 100%;
 }
 
+header nav {
+  color: #10AAB4;
+  text-align: left;
+  font-size: 1.3rem;
+  width: 250px;
+}
+
+header nav ul {
+  list-style: none;
+}
+
+header nav a:link {
+  color: #10AAB4;
+}
+
+header nav a:visited {
+  color: #00747c;
+}
+
+header nav a:hover {
+  color: #efefef;
+}
+
+header nav a:focus {
+  color: #efefef;
+}
+
+header nav a:active {
+  color: #FFC700;
+  background-color: rgba(0, 0, 0, 0);
+}
+
 header h1 {
   font-size: 51pt;
 }
@@ -182,6 +214,9 @@ header h1, header h2 {
     -ms-flex-line-pack: center;
         align-content: center;
   }
+  header nav {
+    margin: 20px auto;
+  }
   .header-background {
     position: absolute;
     z-index: -100;
@@ -227,6 +262,10 @@ header h1, header h2 {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
+  }
+  header nav {
+    margin-top: 20px;
+    margin-left: 45px;
   }
   .header-background {
     position: absolute;
@@ -292,6 +331,9 @@ header h1, header h2 {
 }
 
 @media (min-width: 900px) {
+  header > nav {
+    margin-left: 90px;
+  }
   .header-background {
     left: -300px;
     top: -600px;
