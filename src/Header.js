@@ -17,7 +17,6 @@ function Header({ MenuLinks }) {
                 <h2>Web Development Blog</h2>
             </div>
             <HeaderMenu links={MenuLinks} />
-            <Intro />
         </header>
     );
 }
