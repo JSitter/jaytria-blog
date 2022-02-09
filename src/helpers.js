@@ -1,4 +1,4 @@
-const API_ADDRESS = "https://blog.jaytria.com";
+const API_ADDRESS = "https://api.jaytria.com";
 
 const copyToClipboard = (text) => {
     navigator.clipboard.writeText(text);
