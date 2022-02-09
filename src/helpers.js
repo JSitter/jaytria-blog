@@ -17,7 +17,7 @@ const fetchJSON = (route) => {
 
             const location = process.env.NODE_ENV === 'development' ? local_dev : prod
 
-            fetch(location === 'development' ? local_dev : prod)
+            fetch(location)
                 .then(res => res.json())
                 .then(json => resolve(json))
                 .catch(err => {
